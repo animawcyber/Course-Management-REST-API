@@ -38,3 +38,11 @@ curl -X POST -H "Content-Type: application/json" -d '{
   "crhrs": 3,
 }' http://localhost:8080/courses
 
+my database configuration in application.properties is as follows:
+spring.datasource.url=jdbc:mysql://localhost:3306/course
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true            
+
