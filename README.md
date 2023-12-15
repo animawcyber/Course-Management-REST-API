@@ -9,7 +9,7 @@ Spring Data JPA
 Mysql Database 
 
 Setup
-Clone the repository: git clone https://github.com/animawcyber/course-management.git
+Clone the repository: [git clone https://github.com/animawcyber/course-management.git](https://github.com/animawcyber/Course-Management-REST-API.git)
 Navigate to the project directory: cd course-management
 Build the project: mvn clean install
 Run the application: java -jar target/course-management-1.0.jar
