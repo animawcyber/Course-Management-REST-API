@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course CRUD</title>
+</head>
+<body>
+    <h1>Courses</h1>
+
+    <!-- Display Courses -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Title</th>
+                <th>Credit Hours</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="course : ${courses}">
+                <td th:text="${course.course_code}"></td>
+                <td th:text="${course.course_title}"></td>
+                <td th:text="${course.cr_hrs}"></td>
+                <td>
+                    <!-- Edit Form -->
+                    <form th:action="@{/courses/edit/{id}(id=${course.id})}" method="post" th:object="${course}">
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="text" th:field="*{course_code}" />
+                        <input type="text" th:field="*{course_title}" />
+                        <input type="number" th:field="*{cr_hrs}" />
+                        <button type="submit">Edit</button>
+                    </form>
+
+                    <!-- Delete Form -->
+                    <form th:action="@{/courses/delete/{id}(id=${course.id})}" method="post">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Create Form -->
+    <h2>Create New Course</h2>
+    <form th:action="@{/courses/create}" method="post" th:object="${newCourse}">
+        <input type="text" placeholder="Code" th:field="*{course_code}" />
+        <input type="text" placeholder="Title" th:field="*{course_title}" />
+        <input type="number" placeholder="Credit Hours" th:field="*{cr_hrs}" />
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

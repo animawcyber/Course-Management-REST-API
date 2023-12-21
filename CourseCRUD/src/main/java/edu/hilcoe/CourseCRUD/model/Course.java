@@ -11,11 +11,11 @@ import jakarta.persistence.Table;
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	private String course_title;
 	private String course_code;
 	private int cr_hrs;
-	public Course(long id, String course_title, String course_code, int cr_hrs) {
+	public Course(int id, String course_title, String course_code, int cr_hrs) {
 		super();
 		this.id = id;
 		this.course_title = course_title;
@@ -24,6 +24,13 @@ public class Course {
 	}
 	public Course() {
 		super();
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getCourse_title() {
 		return course_title;
