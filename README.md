@@ -1,6 +1,6 @@
 # Course-Management-REST-API
 Course Management REST API
-This Spring Boot project is designed for teaching purpose at undergraduate level.it provides a RESTful API for managing courses. It offers CRUD (Create, Read, Update, Delete) operations for a 'Course' entity.
+This Spring Boot project is using RESTful API for managing courses. It offers CRUD (Create, Read, Update, Delete) operations for a 'Course' entity.
 
 Technologies Used
 Java
